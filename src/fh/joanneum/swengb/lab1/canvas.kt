@@ -1,13 +1,13 @@
 package fh.joanneum.swengb.lab1
 
-class Square(
-    color: String = "black",
-    val side: Double = 1.0
-) : Shape(color) {
-    override fun getArea(): Double {
-        return side * side
+class Canvas(){
+    private var shapes = mutableListOf<Shape>()
+    fun addShape(shape: Shape){
+        shapes.add(shape)
     }
+    fun getTotalArea(): Double{
+        return shapes.sumByDouble { it.getArea() }
+    }
+
+   // fun shapesCountPerType():Map<String, Int> {}
 }
-
-
-// first collab!!!! :D
